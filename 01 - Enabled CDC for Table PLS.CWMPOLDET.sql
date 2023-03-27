@@ -17,7 +17,7 @@ END
 GO
  
 -- Check dbo.customers is not already CDC enabled, if not then enable CDC for the table
-if (select is_tracked_by_cdc from sys.tables WHERE SCHEMA_NAME(schema_id)='PLS' and  NAME = 'CWMPOLDET') = 'false'
+if (select is_tracked_by_cdc from sys.tables WHERE SCHEMA_NAME(schema_id)='PLS' and  NAME = 'CWMPOLINS') = 'false' --PERUBAHAN NAMA TABLE
 BEGIN
 EXEC sys.sp_cdc_enable_table
    @source_schema = N'PLS',
